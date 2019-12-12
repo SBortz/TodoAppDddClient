@@ -1,6 +1,6 @@
 # todo_app_ddd_client
 
-Client for TodoAppDdd
+A new Flutter application.
 
 ## Getting Started
 
