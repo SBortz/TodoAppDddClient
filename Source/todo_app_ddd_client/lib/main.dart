@@ -14,30 +14,40 @@ class MyApp extends StatelessWidget {
           appBar: AppBar(
             title: Text("TodoAppDdd"),
           ),
-          body: ListView(children: [
-            Container(
+          body: Column(
+            children: <Widget>[
+              Container(
                 child: TextField(),
-              margin: EdgeInsets.all(20),
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: <Widget>[
-                Container(
-                  width: 50,
-                  margin: EdgeInsets.only(left: 20, right: 20),
-                  child: RaisedButton(
-                      child: Text("✓", style: Theme.of(context).textTheme.button,),
-                      onPressed: () => {}),
-                ),
-                Expanded(
-                  child: Text(
-                    'Weihnachten feiern ',
-                    style: Theme.of(context).textTheme.subhead,
-                  ),
-                ),
-              ],
-            )
-          ]),
+                margin: EdgeInsets.all(20),
+              ),
+              Expanded(
+                child: ListView(children: [
+                  TodoItem(context),
+                ]),
+              ),
+            ],
+          ),
         ));
+  }
+
+  Row TodoItem(BuildContext context) {
+    return Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: <Widget>[
+              Container(
+                width: 50,
+                margin: EdgeInsets.only(left: 20, right: 20),
+                child: RaisedButton(
+                    child: Text("✓", style: Theme.of(context).textTheme.button,),
+                    onPressed: () => {}),
+              ),
+              Expanded(
+                child: Text(
+                  'Weihnachten feiern ',
+                  style: Theme.of(context).textTheme.subhead,
+                ),
+              ),
+            ],
+          );
   }
 }
